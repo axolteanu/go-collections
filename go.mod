@@ -1,3 +1,3 @@
-module github.com/aolteanu/go-collection
+module github.com/axolteanu/go-collection
 
 go 1.19
