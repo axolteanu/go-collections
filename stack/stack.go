@@ -9,8 +9,12 @@ type Stack struct {
 	head *Node
 }
 
-func (s *Stack) Push(element any) {
-	node := Node{element, nil}
+func New() *Stack {
+	return new(Stack)
+}
+
+func (s *Stack) Push(value any) {
+	node := Node{value, nil}
 	if s.head != nil {
 		node.next = s.head
 	}
@@ -24,6 +28,14 @@ func (s *Stack) Pop() any {
 	ret := s.head.value
 	s.head = s.head.next
 	return ret
+}
+
+func (s *Stack) Peek() any {
+	if s.IsEmpty() {
+		return nil
+	} else {
+		return s.head.value
+	}
 }
 
 func (s *Stack) IsEmpty() bool {
